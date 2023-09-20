@@ -1,13 +1,10 @@
 # chatbot/views.py
-import openai
 from twilio.rest import Client
 from django.conf import settings
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import ChatConversation
 from .serializers import ChatConversationSerializer
-
-openai.api_key = settings.OPENAI_API_KEY
 
 
 @api_view(['POST'])
