@@ -126,7 +126,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # chatbot_project/settings.py
 
 TWILIO_ACCOUNT_SID = 'ACc3e78907bd9100ff90a8d86135e99189'
-TWILIO_AUTH_TOKEN = 'f096ff7883270c12c56100752d010304'
+TWILIO_AUTH_TOKEN = '1b9287cf028d8866ee57722d3dda781a'
 # Replace with your Twilio WhatsApp number
 TWILIO_FROM_WHATSAPP_NUMBER = 'whatsapp:+14155238886'
 
