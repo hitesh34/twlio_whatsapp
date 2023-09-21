@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+from decouple import config
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -123,12 +124,10 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# chatbot_project/settings.py
 
-TWILIO_ACCOUNT_SID = 'ACc3e78907bd9100ff90a8d86135e99189'
-TWILIO_AUTH_TOKEN = '1b9287cf028d8866ee57722d3dda781a'
-# Replace with your Twilio WhatsApp number
-TWILIO_FROM_WHATSAPP_NUMBER = 'whatsapp:+14155238886'
+TWILIO_ACCOUNT_SID = config('TWILIO_ACCOUNT_SID')
+TWILIO_AUTH_TOKEN = config('TWILIO_AUTH_TOKEN')
+TWILIO_FROM_WHATSAPP_NUMBER = config('TWILIO_FROM_WHATSAPP_NUMBER')
 
 
 # chatbot_project/settings.py
