@@ -1,9 +1,9 @@
-# chatbot/urls.py
-
 from django.urls import path
-from .views import send_message, respond_to_message  # Remove the import for view_conversation
+from .views import send_message, respond_to_message, whatsapp_webhook
 
 urlpatterns = [
     path('send-message/', send_message, name='send-message'),
-    path('respond-to-message/', respond_to_message, name='respond-to-message'),  # Update the URL pattern
+    path('respond-to-message/', respond_to_message, name='respond-to-message'),
+    path('whatsapp-webhook/', whatsapp_webhook,
+         name='whatsapp-webhook'),  # Add this line
 ]

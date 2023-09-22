@@ -5,6 +5,9 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import ChatConversation
 from .serializers import ChatConversationSerializer
+from django.http import HttpResponse
+import json
+from django.views.decorators.csrf import csrf_exempt
 
 
 @api_view(['POST'])
@@ -60,3 +63,18 @@ def respond_to_message(request):
     serializer = ChatConversationSerializer(conversation)
 
     return Response(serializer.data, status=200)
+
+
+@csrf_exempt  # Add this decorator
+def whatsapp_webhook(request):
+    if request.method == 'POST':
+        # Process incoming WhatsApp message here
+        data = json.loads(request.body.decode('utf-8'))
+        # Extract message content and sender's WhatsApp number from 'data'
+        # You can then store this information in your database.
+        # Create or update the ChatConversation object, similar to the 'respond_to_message' view.
+        # Handle the incoming message and generate a response if needed.
+        # Send the response using the 'send_message' function.
+        return HttpResponse(status=200)
+    else:
+        return HttpResponse(status=405)
