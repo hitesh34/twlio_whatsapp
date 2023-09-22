@@ -9,10 +9,21 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
+# settings.py
+
+# Set STATIC_ROOT to an absolute path where you want to collect static files.
+from pathlib import Path
+from decouple import config
 import os
 
-from decouple import config
-from pathlib import Path
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Your other settings...
+
+STATIC_URL = '/static/'
+# Adjust this path as needed
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -117,10 +128,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
-
-STATIC_URL = 'static/'
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 # Default primary key field type
