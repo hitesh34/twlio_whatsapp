@@ -1,1 +1,1 @@
-web : gunicorn twlio_whatsapp.wsgi
+web: gunicorn twlio_whatsapp.wsgi
